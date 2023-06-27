@@ -10,13 +10,13 @@ MERGE_FILE=./pretrain_gpt/merges.txt
 DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 
 GPT_ARGS="
-    --num-layers 24 \
+    --num-layers 12 \
     --hidden-size 1024 \
-    --num-attention-heads 16 \
+    --num-attention-heads 8 \
     --seq-length 1024 \
     --max-position-embeddings 1024 \
-    --micro-batch-size 4 \
-    --global-batch-size 4 \
+    --micro-batch-size 2 \
+    --global-batch-size 2 \
     --lr 0.00015 \
     --train-iters 500000 \
     --lr-decay-iters 320000 \
@@ -46,7 +46,7 @@ OUTPUT_ARGS="
 torchrun --nproc_per_node=1 \
          --nnodes=1 \
          --node_rank=0 \
-         --master_addr="172.31.92.228" \
+         --master_addr="127.0.0.1" \
          --master_port=34710 \
          pretrain_gpt.py \
          $GPT_ARGS \
