@@ -13,7 +13,7 @@ GPT_ARGS="
     --num-layers 12 \
     --hidden-size 512 \
     --num-attention-heads 8 \
-    --seq-length 1024 \
+    --seq-length 512 \
     --max-position-embeddings 512 \
     --micro-batch-size 2 \
     --global-batch-size 2 \
