@@ -11,10 +11,10 @@ DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 
 GPT_ARGS="
     --num-layers 6 \
-    --hidden-size 256 \
+    --hidden-size 128 \
     --num-attention-heads 4 \
-    --seq-length 256 \
-    --max-position-embeddings 256 \
+    --seq-length 128 \
+    --max-position-embeddings 128 \
     --micro-batch-size 1 \
     --global-batch-size 1 \
     --lr 0.00015 \
