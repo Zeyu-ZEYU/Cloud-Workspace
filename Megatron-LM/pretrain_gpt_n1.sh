@@ -10,11 +10,12 @@ MERGE_FILE=./pretrain_gpt/merges.txt
 DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 
 GPT_ARGS="
-    --num-layers 24 \
-    --hidden-size 1024 \
-    --num-attention-heads 16 \
-    --seq-length 1024 \
-    --max-position-embeddings 1024 \
+    --num-layers 12 \
+    --tensor-model-parallel-size 8 \
+    --hidden-size 512 \
+    --num-attention-heads 8 \
+    --seq-length 512 \
+    --max-position-embeddings 512 \
     --micro-batch-size 4 \
     --global-batch-size 32 \
     --lr 0.00015 \
