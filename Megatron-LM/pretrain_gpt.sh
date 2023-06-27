@@ -10,8 +10,9 @@ MERGE_FILE=./pretrain_gpt/merges.txt
 DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 
 GPT_ARGS="
-    --num-layers 6 \
-    --hidden-size 128 \
+    --num-layers 2 \
+    --tensor-model-parallel-size 4 \
+    --hidden-size 64 \
     --num-attention-heads 4 \
     --seq-length 128 \
     --max-position-embeddings 128 \
@@ -43,7 +44,7 @@ OUTPUT_ARGS="
     --eval-iters 10
 "
 
-torchrun --nproc_per_node=1 \
+torchrun --nproc_per_node=4 \
          --nnodes=1 \
          --node_rank=0 \
          --master_addr="127.0.0.1" \
