@@ -16,7 +16,7 @@ GPT_ARGS="
     --seq-length 1024 \
     --max-position-embeddings 1024 \
     --micro-batch-size 4 \
-    --global-batch-size 32 \
+    --global-batch-size 4 \
     --lr 0.00015 \
     --train-iters 500000 \
     --lr-decay-iters 320000 \
@@ -43,11 +43,11 @@ OUTPUT_ARGS="
     --eval-iters 10
 "
 
-torchrun --nproc_per_node=4 \
-         --nnodes=2 \
-         --node_rank=1 \
+torchrun --nproc_per_node=1 \
+         --nnodes=1 \
+         --node_rank=0 \
          --master_addr="172.31.92.228" \
-         --master_port=34718 \
+         --master_port=34710 \
          pretrain_gpt.py \
          $GPT_ARGS \
          $DATA_ARGS \
