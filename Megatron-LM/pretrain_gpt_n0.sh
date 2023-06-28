@@ -49,7 +49,7 @@ torchrun --nproc_per_node=4 \
          --nnodes=2 \
          --node_rank=0 \
          --master_addr="172.31.92.228" \
-         --master_port=34728 \
+         --master_port=34723 \
          pretrain_gpt.py \
          $GPT_ARGS \
          $DATA_ARGS \
