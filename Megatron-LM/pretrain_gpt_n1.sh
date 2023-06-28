@@ -3,6 +3,7 @@
 # Runs the "345M" parameter model
 
 export CUDA_DEVICE_MAX_CONNECTIONS=1
+export CUDA_PATH=/usr/local/cuda-11.8/
 
 CHECKPOINT_PATH=./pretrain_gpt/checkpoints
 VOCAB_FILE=./pretrain_gpt/vocab.json
