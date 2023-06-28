@@ -13,7 +13,7 @@ DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 GPT_ARGS="
     --num-layers 1 \
     --tensor-model-parallel-size 8 \
-    --hidden-size 16 \
+    --hidden-size 32 \
     --num-attention-heads 8 \
     --seq-length 1024 \
     --max-position-embeddings 1024 \
