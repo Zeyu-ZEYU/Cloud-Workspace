@@ -10,12 +10,12 @@ MERGE_FILE=./pretrain_gpt/merges.txt
 DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 
 GPT_ARGS="
-    --num-layers 12 \
+    --num-layers 1 \
     --tensor-model-parallel-size 8 \
-    --hidden-size 512 \
+    --hidden-size 16 \
     --num-attention-heads 8 \
-    --seq-length 512 \
-    --max-position-embeddings 512 \
+    --seq-length 1024 \
+    --max-position-embeddings 1024 \
     --micro-batch-size 4 \
     --global-batch-size 32 \
     --lr 0.00015 \
@@ -54,4 +54,6 @@ torchrun --nproc_per_node=4 \
          $DATA_ARGS \
          $OUTPUT_ARGS \
          --save $CHECKPOINT_PATH \
-         --load $CHECKPOINT_PATH
+         --load $CHECKPOINT_PATH \
+& \
+(sleep 10 && python3 netif_monitor.py)
