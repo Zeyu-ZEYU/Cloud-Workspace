@@ -11,7 +11,7 @@ MERGE_FILE=./pretrain_gpt/merges.txt
 DATA_PATH=./pretrain_gpt/data/BookCorpusDataset_text_document
 
 GPT_ARGS="
-    --num-layers 1 \
+    --num-layers 2 \
     --tensor-model-parallel-size 8 \
     --hidden-size 128 \
     --num-attention-heads 8 \
